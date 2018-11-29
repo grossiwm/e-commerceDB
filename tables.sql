@@ -4,7 +4,7 @@ CREATE TABLE usuario (
     email varchar(255),
     nome varchar(255),
     carrinhoID int,
-    PRIMARY KEY (id)
+    PRIMARY KEY (usuarioID)
 );
 
 CREATE TABLE produtos (
@@ -12,13 +12,12 @@ CREATE TABLE produtos (
     nome varchar(255),
     tipo varchar(255),
     category varchar(255),
+    carrinhoID int,
     PRIMARY KEY (produtosID),
-    FOREIGN KEY (carrinhoid) REFERENCES usuario(carrinhoID)
+    FOREIGN KEY (carrinhoID) REFERENCES usuario(usuarioID)
 );
 
-CREATE TABLE endereco (
-    
-);
+
 
 
 
