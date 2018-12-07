@@ -6,14 +6,13 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE produto (
-    produtoID int NOT NULL,
+    produtoID INTEGER PRIMARY KEY AUTOINCREMENT,
     nome varchar(255),
     tipo varchar(255),
-    category varchar(255),
-    usuarioID int,
-    PRIMARY KEY (produtoID),
-    FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID)
+    descricao varchar(255),
+    preco decimal
 );
+
 
 CREATE TABLE adiciona (
     quantidade int,
@@ -25,32 +24,30 @@ CREATE TABLE adiciona (
 );
 
 CREATE TABLE endereco (
-    enderecoID int,
+    enderecoID INTEGER PRIMARY KEY AUTOINCREMENT,
     cep varchar(255),
     numero varchar(255),
     complemento varchar(255),
     bairro varchar(255),
     usuarioID int,
-    PRIMARY KEY (enderecoID),
     FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID)
 );
 
 CREATE TABLE cartao (
-    cartaoID int,
+    cartaoID INTEGER PRIMARY KEY AUTOINCREMENT,
     numero varchar(255),
     validade varchar(255),
     usuarioID int,
-    PRIMARY KEY (cartaoID),
     FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID)
 );
 
 CREATE TABLE compra (
-    compraID int,
+    compraID INTEGER PRIMARY KEY AUTOINCREMENT,
     usuarioID int,
     enderecoEntregaID int,
     enderecoCobrancaID int,
     cartaoID int,
-    PRIMARY KEY (compraID),
+    data_compra varchar(255),
     FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID),
     FOREIGN KEY (enderecoEntregaID) REFERENCES endereco(enderecoID),
     FOREIGN KEY (enderecoCobrancaID) REFERENCES endereco(enderecoID),
