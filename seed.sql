@@ -1,8 +1,6 @@
 -- populando usario
 INSERT INTO usuario (cpf, email, nome)
 VALUES ('000000000', 'luiz@hotmail.com', 'luiz');
-INSERT INTO usuario (cpf, email, nome)
-VALUES ('000000000', 'fulano@hotmail.com', 'fulano');
 
 -- populando produtos
 INSERT INTO produto (nome, tipo, descricao, preco)
@@ -66,7 +64,12 @@ VALUES (1, 2, 3, 3, "03/10/16");
 -- ProdutoCompra
 
 INSERT INTO produto_compra (compraID, produtoID, quantidade)
-VALUES (1, 2, 3, 3);
+VALUES (1, 2, 3);
 
+INSERT INTO produto_compra (compraID, produtoID, quantidade)
+VALUES (1, 1, 3);
+
+INSERT INTO produto_compra (compraID, produtoID, quantidade)
+VALUES (1, 3, 3);
 
 
