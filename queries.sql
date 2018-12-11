@@ -23,7 +23,19 @@ SELECT usuario.nome, usuario.email, produto.nome, produto.preco, produto_compra.
 WHERE produto_compra.produtoID = produto.produtoID
 GROUP BY produto.nome;
 
+SELECT usuario.nome, usuario.email, produto.nome, produto.preco, produto_compra.quantidade*produto.preco
+FROM usuario, produto_compra, produto
+WHERE produto_compra.produtoID = produto.produtoID;
 
 -- SELECT quantidade * preco FROM (SELECT usuario.nome, usuario.email, produto.nome, produto.preco, produto_compra.quantidade FROM usuario, produto_compra, produto
 -- WHERE produto_compra.produtoID = produto.produtoID)
 -- GROUP BY produto.nome;
+
+-- Calculando valor total para cada compra do usuário
+SELECT usuario.nome, usuario.email, compra.compraID, sum(produto.preco*produto_compra.quantidade)
+FROM usuario, compra, produto_compra, produto
+WHERE usuario.usuarioID = compra.usuarioID 
+AND produto.produtoID = produto_compra.produtoID 
+AND produto_compra.compraID = compra.compraID
+GROUP BY compra.compraID;
+
