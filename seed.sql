@@ -1,6 +1,6 @@
 -- populando usario
 INSERT INTO usuario (cpf, email, nome)
-VALUES ('0123456123', 'luiz@hotmail.com', 'luiz');
+VALUES ('0123456123', 'luiz@hotmail.com', 'Luiz Almeida Junior');
 
 -- populando produtos
 INSERT INTO produto (nome, tipo, descricao, preco)
@@ -42,10 +42,10 @@ VALUES ("1234 1934 1234 1534", "12/90", 1);
 -- Endereco
 
 INSERT INTO endereco (cep, numero, complemento, bairro, usuarioID)
-VALUES ("24300400", "10", "fundos", "Beverly Hills", 1);
+VALUES ("24300400", "10", "23", "Beverly Hills", 1);
 
 INSERT INTO endereco (cep, numero, complemento, bairro, usuarioID)
-VALUES ("24300922", "1", "ape", "Albuquerque", 1);
+VALUES ("24300922", "1", "201", "Albuquerque", 1);
 
 INSERT INTO endereco (cep, numero, complemento, bairro, usuarioID)
 VALUES ("24366600", "10", "49", "Novo Mexico", 1);
